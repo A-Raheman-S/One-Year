@@ -63,7 +63,7 @@ export const siteConfig: SiteConfig = {
   songDedication: "Sun zalima mere sanu koi darr na... The melody that will always belong to our journey.",
 
   // Voice note
-  voiceNoteAudioUrl: "/audio/voice-note.m4a",
+  voiceNoteAudioUrl: "./audio/voice-note.m4a",
   voiceNoteSender: "Your Abdi",
   voiceNoteDurationSec: 42,
 

@@ -19,8 +19,10 @@ export function useAudioPlayer(audioSrc: string, fallbackDurationSec: number = 4
   // Initialize Audio
   useEffect(() => {
     const audio = new Audio();
+    audio.crossOrigin = 'anonymous'; // Required for Web Audio API on GitHub Pages
     audio.src = audioSrc;
     audio.volume = volume;
+    audio.preload = 'metadata';
     audioRef.current = audio;
 
     const handleLoadedMetadata = () => {
@@ -38,14 +40,21 @@ export function useAudioPlayer(audioSrc: string, fallbackDurationSec: number = 4
       setCurrentTime(0);
     };
 
+    const handleError = () => {
+      // Audio file not found or can't load — will fallback to synth
+      console.warn('Audio file could not be loaded, synth fallback will be used.');
+    };
+
     audio.addEventListener('loadedmetadata', handleLoadedMetadata);
     audio.addEventListener('timeupdate', handleTimeUpdate);
     audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('error', handleError);
 
     return () => {
       audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
       audio.removeEventListener('timeupdate', handleTimeUpdate);
       audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('error', handleError);
       audio.pause();
     };
   }, [audioSrc]);
@@ -165,6 +174,10 @@ export function useAudioPlayer(audioSrc: string, fallbackDurationSec: number = 4
     } else {
       // Try HTML5 Audio play
       try {
+        // Check if audio source loaded properly
+        if (audioRef.current && audioRef.current.readyState === 0) {
+          throw new Error('Audio not loaded');
+        }
         await audio.play();
         setIsPlaying(true);
       } catch {
