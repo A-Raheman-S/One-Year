@@ -75,7 +75,8 @@ export const BeforeAfterSlider: React.FC = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className="relative mx-auto aspect-[4/5] sm:aspect-[4/4] md:aspect-[16/10] w-full max-w-3xl overflow-hidden rounded-3xl border border-rose-500/30 shadow-2xl shadow-black/60 cursor-ew-resize touch-none bg-stone-950"
+        className="relative mx-auto w-full max-w-3xl overflow-hidden rounded-3xl border border-rose-500/30 shadow-2xl shadow-black/60 cursor-ew-resize touch-none bg-stone-950"
+        style={{ height: '520px' }}
         ref={containerRef}
         onMouseDown={(e) => {
           setIsDragging(true);
@@ -86,60 +87,62 @@ export const BeforeAfterSlider: React.FC = () => {
           handleMove(e.touches[0].clientX);
         }}
       >
-        {/* "AFTER" (NOW) Image (Underneath, full size) */}
-        <div className="absolute inset-0 w-full h-full">
-          {/* Blurred background for portrait photos */}
+        {/* ── NOW (AFTER) image — sits on the bottom, full width ── */}
+        <div className="absolute inset-0">
+          {/* blurred fill */}
           <img
             src={siteConfig.afterImage}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
+            className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-30 pointer-events-none"
           />
+          {/* crisp main image */}
           <img
             src={siteConfig.afterImage}
-            alt="Present Day"
-            className="relative z-10 w-full h-full object-contain"
+            alt="Now"
             loading="lazy"
+            className="absolute inset-0 w-full h-full object-contain"
           />
-          <div className="absolute top-5 right-5 z-20 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-rose-400/30 text-xs font-bold tracking-[0.25em] uppercase text-champagne-300 pointer-events-none">
-            NOW (1 YEAR)
-          </div>
+          <span className="absolute top-4 right-4 z-10 px-3 py-1 rounded-full bg-black/65 backdrop-blur-md border border-rose-400/30 text-[11px] font-bold tracking-[0.25em] uppercase text-champagne-300">
+            NOW ✦ 1 YEAR
+          </span>
         </div>
 
-        {/* "BEFORE" (THEN) Image (Clipped on top) */}
+        {/* ── THEN (BEFORE) image — sits on top, clipped from the right ── */}
         <div
-          className="absolute inset-0 w-full h-full overflow-hidden will-change-[clip-path]"
+          className="absolute inset-0"
           style={{
-            clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`,
+            clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
           }}
         >
-          {/* Blurred background for portrait photos */}
+          {/* blurred fill */}
           <img
             src={siteConfig.beforeImage}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
+            className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-30 pointer-events-none"
           />
+          {/* crisp main image */}
           <img
             src={siteConfig.beforeImage}
-            alt="Then — Day One"
-            className="relative z-10 w-full h-full object-contain"
+            alt="Then"
             loading="lazy"
+            className="absolute inset-0 w-full h-full object-contain"
           />
-          <div className="absolute top-5 left-5 z-20 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-rose-400/30 text-xs font-bold tracking-[0.25em] uppercase text-champagne-300 pointer-events-none">
-            THEN (DAY ONE)
-          </div>
+          <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-black/65 backdrop-blur-md border border-rose-400/30 text-[11px] font-bold tracking-[0.25em] uppercase text-champagne-300">
+            THEN ✦ DAY ONE
+          </span>
         </div>
 
-        {/* Center Vertical Divider Line */}
+        {/* ── Vertical Divider Line ── */}
         <div
-          className="absolute top-0 bottom-0 w-[3px] bg-gradient-to-b from-champagne-300 via-rose-400 to-peach-500 pointer-events-none z-20 shadow-[0_0_10px_#EF6389]"
+          className="absolute top-0 bottom-0 w-[2px] bg-gradient-to-b from-champagne-300 via-rose-400 to-peach-500 pointer-events-none z-30 shadow-[0_0_10px_#EF6389]"
           style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
         >
-          {/* Circular Drag Handle */}
+          {/* Circular drag handle */}
           <div
-            className={`absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 w-12 h-12 rounded-full bg-wine-900 border-2 border-rose-400 shadow-glow-rose flex items-center justify-center transition-transform ${
-              isDragging ? 'scale-110' : 'scale-100 hover:scale-105'
+            className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#250D17] border-2 border-rose-400 shadow-[0_0_15px_rgba(239,99,137,0.6)] flex items-center justify-center transition-transform duration-150 ${
+              isDragging ? 'scale-110' : 'scale-100'
             }`}
           >
             <ChevronsLeftRight size={20} className="text-champagne-300" />
@@ -149,7 +152,7 @@ export const BeforeAfterSlider: React.FC = () => {
 
       {/* Helper caption */}
       <p className="mt-6 text-xs uppercase tracking-widest text-muted-text font-medium">
-        Drag slider left or right to uncover seven years of growth
+        Drag slider left or right to compare
       </p>
     </section>
   );

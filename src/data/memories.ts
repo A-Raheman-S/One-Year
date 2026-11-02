@@ -13,7 +13,7 @@ export const memories: MemoryChapter[] = [
   {
     id: 1,
     chapter: "CHAPTER 01",
-    title: "All it start with ",
+    title: "It all started with ",
     caption: "A birthday wish chat",
     date: "9th AUGUST 2025",
     image: "./images/memories/chapter1.png",
