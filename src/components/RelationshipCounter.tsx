@@ -43,7 +43,7 @@ export const RelationshipCounter: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="font-cursive text-6xl md:text-7xl lg:text-8xl text-cream-100"
         >
-          Married For
+          Loving You For
         </motion.h2>
       </div>
 

@@ -95,7 +95,7 @@ export const BeforeAfterSlider: React.FC = () => {
             loading="lazy"
           />
           <div className="absolute top-5 right-5 z-10 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-rose-400/30 text-xs font-bold tracking-[0.25em] uppercase text-champagne-300 pointer-events-none">
-            NOW (7 YEARS)
+            NOW (1 YEAR)
           </div>
         </div>
 
