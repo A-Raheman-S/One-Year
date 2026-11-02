@@ -75,7 +75,7 @@ export const BeforeAfterSlider: React.FC = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className="relative mx-auto aspect-[16/10] md:aspect-[16/9] w-full max-w-4xl overflow-hidden rounded-3xl border border-rose-500/30 shadow-2xl shadow-black/60 cursor-ew-resize touch-none"
+        className="relative mx-auto aspect-[4/5] sm:aspect-[4/4] md:aspect-[16/10] w-full max-w-3xl overflow-hidden rounded-3xl border border-rose-500/30 shadow-2xl shadow-black/60 cursor-ew-resize touch-none bg-stone-950"
         ref={containerRef}
         onMouseDown={(e) => {
           setIsDragging(true);
@@ -88,13 +88,20 @@ export const BeforeAfterSlider: React.FC = () => {
       >
         {/* "AFTER" (NOW) Image (Underneath, full size) */}
         <div className="absolute inset-0 w-full h-full">
+          {/* Blurred background for portrait photos */}
           <img
             src={siteConfig.afterImage}
-            alt="Present Day — Rahul & Anjali"
-            className="w-full h-full object-cover"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
+          />
+          <img
+            src={siteConfig.afterImage}
+            alt="Present Day"
+            className="relative z-10 w-full h-full object-contain"
             loading="lazy"
           />
-          <div className="absolute top-5 right-5 z-10 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-rose-400/30 text-xs font-bold tracking-[0.25em] uppercase text-champagne-300 pointer-events-none">
+          <div className="absolute top-5 right-5 z-20 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-rose-400/30 text-xs font-bold tracking-[0.25em] uppercase text-champagne-300 pointer-events-none">
             NOW (1 YEAR)
           </div>
         </div>
@@ -106,13 +113,20 @@ export const BeforeAfterSlider: React.FC = () => {
             clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`,
           }}
         >
+          {/* Blurred background for portrait photos */}
           <img
             src={siteConfig.beforeImage}
-            alt="Then — Year 1"
-            className="w-full h-full object-cover"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
+          />
+          <img
+            src={siteConfig.beforeImage}
+            alt="Then — Day One"
+            className="relative z-10 w-full h-full object-contain"
             loading="lazy"
           />
-          <div className="absolute top-5 left-5 z-10 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-rose-400/30 text-xs font-bold tracking-[0.25em] uppercase text-champagne-300 pointer-events-none">
+          <div className="absolute top-5 left-5 z-20 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-rose-400/30 text-xs font-bold tracking-[0.25em] uppercase text-champagne-300 pointer-events-none">
             THEN (DAY ONE)
           </div>
         </div>

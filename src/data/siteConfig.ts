@@ -53,8 +53,8 @@ export const siteConfig: SiteConfig = {
 
   // Curated high aesthetic romantic photographs with sunset & warm burgundy palette
   heroImage: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop",
-  beforeImage: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1400&auto=format&fit=crop",
-  afterImage: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1400&auto=format&fit=crop",
+  beforeImage: "./images/memories/chapter2.jpg",
+  afterImage: "./images/memories/chapter6.jpg",
 
   // Music Section: Humsafar - Badrinath Ki Dulhania
   youtubeVideoId: "8v-TWxPWIWc",
