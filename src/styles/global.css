@@ -1,0 +1,100 @@
+@import './themes.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-cream-200);
+    background-color: var(--color-wine-900);
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  body {
+    background: radial-gradient(circle at 50% 0%, var(--glow-radial-1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 30%, var(--glow-radial-2) 0%, transparent 40%),
+                radial-gradient(circle at 20% 70%, var(--glow-radial-1) 0%, transparent 45%),
+                radial-gradient(circle at 50% 100%, var(--glow-radial-2) 0%, transparent 60%),
+                linear-gradient(180deg, var(--bg-gradient-top) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-bottom) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-wine-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-wine-700);
+  border-radius: 9999px;
+  border: 2px solid var(--color-wine-900);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-rose-500);
+}
+
+/* 3D Transform Utilities for Flip Cards */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.perspective-1200 {
+  perspective: 1200px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-pill {
+  background: rgba(80, 28, 41, 0.4);
+  border: 1px solid rgba(239, 99, 137, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+/* Paper note shadow & texture */
+.paper-card {
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Tape styling */
+.tape-strip {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom cursor */
+@media (pointer: fine) {
+  body {
+    cursor: default;
+  }
+}

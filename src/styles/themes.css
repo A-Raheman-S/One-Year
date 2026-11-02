@@ -1,0 +1,91 @@
+:root, [data-theme="rose-gold"] {
+  --color-wine-900: #250D17;
+  --color-wine-800: #35111E;
+  --color-wine-700: #501C29;
+  --color-rose-500: #EF6389;
+  --color-rose-400: #F3819E;
+  --color-champagne-400: #E9BC91;
+  --color-champagne-300: #F0CEA8;
+  --color-peach-500: #F2A16F;
+  --color-cream-100: #FDF9F3;
+  --color-cream-200: #F5E8D8;
+  --color-cream-300: #EBD7C1;
+  --color-muted-text: #B99A94;
+  --bg-gradient-top: #250D17;
+  --bg-gradient-mid: #35111E;
+  --bg-gradient-bottom: #1B0910;
+  --glow-radial-1: rgba(239, 99, 137, 0.12);
+  --glow-radial-2: rgba(242, 161, 111, 0.10);
+  --glass-bg: rgba(53, 17, 30, 0.45);
+  --glass-border: rgba(239, 99, 137, 0.22);
+  --theme-accent: #EF6389;
+}
+
+[data-theme="champagne-gold"] {
+  --color-wine-900: #181310;
+  --color-wine-800: #281F19;
+  --color-wine-700: #3E3025;
+  --color-rose-500: #D89C62;
+  --color-rose-400: #E5B27D;
+  --color-champagne-400: #F2C99D;
+  --color-champagne-300: #F9DEC1;
+  --color-peach-500: #E89E6C;
+  --color-cream-100: #FFFDF9;
+  --color-cream-200: #FBF4EA;
+  --color-cream-300: #EFE2CF;
+  --color-muted-text: #BCAAA0;
+  --bg-gradient-top: #181310;
+  --bg-gradient-mid: #281F19;
+  --bg-gradient-bottom: #120D0A;
+  --glow-radial-1: rgba(242, 201, 157, 0.14);
+  --glow-radial-2: rgba(232, 158, 108, 0.10);
+  --glass-bg: rgba(40, 31, 25, 0.50);
+  --glass-border: rgba(242, 201, 157, 0.25);
+  --theme-accent: #F2C99D;
+}
+
+[data-theme="velvet-crimson"] {
+  --color-wine-900: #1B070E;
+  --color-wine-800: #2E0B17;
+  --color-wine-700: #4B1224;
+  --color-rose-500: #E5385D;
+  --color-rose-400: #ED6382;
+  --color-champagne-400: #E89E9B;
+  --color-champagne-300: #F3BCB9;
+  --color-peach-500: #F06579;
+  --color-cream-100: #FFF9FA;
+  --color-cream-200: #F7EBE8;
+  --color-cream-300: #EBD3CF;
+  --color-muted-text: #B8929A;
+  --bg-gradient-top: #1B070E;
+  --bg-gradient-mid: #2E0B17;
+  --bg-gradient-bottom: #140409;
+  --glow-radial-1: rgba(229, 56, 93, 0.15);
+  --glow-radial-2: rgba(240, 101, 121, 0.12);
+  --glass-bg: rgba(46, 11, 23, 0.50);
+  --glass-border: rgba(229, 56, 93, 0.25);
+  --theme-accent: #E5385D;
+}
+
+[data-theme="moonlight"] {
+  --color-wine-900: #0B101C;
+  --color-wine-800: #141C30;
+  --color-wine-700: #212D4C;
+  --color-rose-500: #7899CE;
+  --color-rose-400: #97B2DE;
+  --color-champagne-400: #C2D5F0;
+  --color-champagne-300: #DFEAF8;
+  --color-peach-500: #9FB9E2;
+  --color-cream-100: #FAFCFF;
+  --color-cream-200: #EDF3FB;
+  --color-cream-300: #D2E0F1;
+  --color-muted-text: #96A3BC;
+  --bg-gradient-top: #0B101C;
+  --bg-gradient-mid: #141C30;
+  --bg-gradient-bottom: #070A12;
+  --glow-radial-1: rgba(120, 153, 206, 0.14);
+  --glow-radial-2: rgba(194, 213, 240, 0.10);
+  --glass-bg: rgba(20, 28, 48, 0.50);
+  --glass-border: rgba(120, 153, 206, 0.25);
+  --theme-accent: #7899CE;
+}
