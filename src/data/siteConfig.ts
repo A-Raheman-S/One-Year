@@ -47,7 +47,7 @@ export const siteConfig: SiteConfig = {
   personTwo: "Aafu",
   // 1 year ago from 2026: 2025-11-03
   relationshipStartDate: "2025-11-03T18:49:00",
-  anniversaryYearsBadge: "1 YEARS TOGETHER",
+  anniversaryYearsBadge: "1 YEAR TOGETHER",
   heroSubtitle: "Still my favourite hello and my hardest goodbye.",
   scrollIndicatorText: "SCROLL TO RELIVE IT ALL",
 
